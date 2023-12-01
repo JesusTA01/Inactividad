@@ -3,7 +3,7 @@
 	if(!ISSET($_SESSION['user_id'])){
 		header('location:index.php');
 	}else{
-		if((time() - $_SESSION['time']) > 60){
+		if((time() - $_SESSION['time']) > 10){
 			header('location: logout_page.php');
 		}
 	}
