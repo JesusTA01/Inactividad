@@ -1,10 +1,10 @@
 <?php
 	session_start();
-	if(!ISSET($_SESSION['user_id'])){
-		header('location:index.php');
+	if(!ISSET($_SESSION['2023'])){
+		header('http://localhost:8080/AcensoPersonalTelcelJavaEnvironment/com.acensopersonaltelcel.wpusuario');
 	}else{
 		if((time() - $_SESSION['time']) > 10){
-			header('location: logout_page.php');
+			header('http://localhost:8080/AcensoPersonalTelcelJavaEnvironment/com.acensopersonaltelcel.wpsalir');
 		}
 	}
 ?>
