@@ -1,10 +1,33 @@
-<?php
-	session_start();
-	if(!ISSET($_SESSION['2023'])){
-		header('http://localhost:8080/AcensoPersonalTelcelJavaEnvironment/com.acensopersonaltelcel.wpusuario');
-	}else{
-		if((time() - $_SESSION['time']) > 10){
-			header('http://localhost:8080/AcensoPersonalTelcelJavaEnvironment/com.acensopersonaltelcel.wpsalir');
-		}
-	}
-?>
+<script type="text/javascript">
+var tstampActual = 0;
+var comprobar = 10000;
+
+function actividad() {
+
+var tstamp = new Date().getTime();
+
+if (Math.abs(tstampActual - tstamp) > comprobar) {
+
+document.getElementById('expirado').style.display = 'inline';
+
+} else {
+
+document.getElementById('expirado').style.display = 'none';
+
+}
+}
+
+
+window.addEventListener('load', function() {
+
+document.body.addEventListener('mousemove', function() {
+
+tstampActual = new Date().getTime();
+
+}, false);
+
+setInterval(actividad, comprobar);
+});
+
+
+</script>
