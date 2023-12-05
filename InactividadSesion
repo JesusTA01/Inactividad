@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	if(!ISSET($_SESSION['202301'])){
+	if(!ISSET($_SESSION[&UsuNom])){
 		header('http://localhost:8080/AcensoPersonalTelcelJavaEnvironment/com.acensopersonaltelcel.wpusuario');
 	}else{
 		if((time() - $_SESSION['time']) > 10){
